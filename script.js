@@ -14,4 +14,24 @@ const litva = {
   vacancies: 1114
 };
 
+//(1 function)
+const getMyTaxes = function(salary) {
+  return salary * this.tax
+}
+
+console.log("My taxes if i am IT specialist", getMyTaxes.call(ukraine, 2500));
+
+//(2 function)
+const getMiddleTaxes = function() {
+  return this.tax * this.middleSalary;
+}
+
+console.log("Middle taxes in countries", getMiddleTaxes.call(litva));
+
+//(3 function)
+const getTotalTaxes = function() {
+  return this.tax * this.middleSalary * this.vacancies;
+}
+
+console.log("Total taxes in countries", getTotalTaxes.call(latvia));
 
